@@ -1,11 +1,7 @@
 const container = document.querySelector("#container");
 const btn = document.querySelector("#btn");
 
-for (let i = 0; i < 256; i++) {
-    const square = document.createElement("div");
-    square.classList.add("square");
-    container.appendChild(square);
-}
+generateGrid(16);
 
 container.addEventListener("mouseover", (event) => {
     let target = event.target;
@@ -14,5 +10,22 @@ container.addEventListener("mouseover", (event) => {
 });
 
 btn.addEventListener("click", () => {
-    let size = prompt("Enter the size of the new grid:");
+    let size;
+    do {
+        size = prompt("Enter the size of the new grid (1-100):");
+    } while (size < 1 || size > 100);
+    while (container.firstChild)
+        container.removeChild(container.lastChild);
+    generateGrid(size);
 });
+
+function generateGrid (size) {
+    for (let i = 0; i < (size * size); i++) {
+        const square = document.createElement("div");
+        square.classList.add("square");
+        let boxSize = 800 / size;
+        square.style.width = boxSize + "px";
+        square.style.height = boxSize + "px";
+        container.appendChild(square);
+    }
+}
