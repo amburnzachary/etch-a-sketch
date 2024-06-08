@@ -6,10 +6,22 @@ html {
     box-sizing: inherit;
 }
 
+#page {
+    display: flex;
+    flex-direction: column;
+}
+
+#btn {
+    width: 100px;
+    margin: auto;
+    margin-bottom: 8px;
+}
+
 #container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    margin: auto;
     width: 801px;
     height: 801px;
     border-width: .5px;
