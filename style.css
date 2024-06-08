@@ -23,3 +23,7 @@ html {
     border-style: solid;
     border-collapse: collapse;
 }
+
+.hovered {
+    background-color: black;
+}

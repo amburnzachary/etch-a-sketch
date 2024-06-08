@@ -5,3 +5,9 @@ for (let i = 0; i < 256; i++) {
     square.classList.add("square");
     container.appendChild(square);
 }
+
+container.addEventListener("mouseover", (event) => {
+    let target = event.target;
+    if (target != container)
+        target.classList.add("hovered");
+})
